@@ -20,12 +20,12 @@
       <button>Pesquisar</button>
     </div>
     <div id="fretes" class="div_tables">
-      <table id="table_fretes">
+      <table id="table_fretes" onchange="AlteraTabelaFretes()">
         <caption>
           <div>
             <span>FRETES</span>
             <div>
-             <input type="checkbox" name="Selecionar Todos" id="ckb_fretes" class="selecionar_todos">
+             <input type="checkbox" name="Selecionar Todos" id="ckb_fretes" class="selecionar_todos" onchange="selTodosFretes()">
              <label for="ckb_fretes">Selecionar Todos</label>
             </div>
           </div>
@@ -42,7 +42,19 @@
           <th>Produto</th>
           <th>Peso</th>
         </thead>
-        <tbody>
+        <tbody id="bodyFrete">
+          <tr>
+            <td><input  id="c_1" type="checkbox" name="" id="pagar"/></td>
+            <td>26</td>
+            <td>10/12/2022</td>
+            <td>Luis Phillip Fortini Machado Pinheiro</td>
+            <td>200,00</td>
+            <td>50,00</td>
+            <td>150,00</td>
+            <td><input type="number" placeholder="100,00" value="150"></td>
+            <td>Brita</td>
+            <td>10,0</td>
+          </tr>
           <tr>
             <td><input type="checkbox" name="" id="pagar" /></td>
             <td>25</td>
@@ -50,8 +62,8 @@
             <td>Luis Phillip Fortini Machado Pinheiro</td>
             <td>100,00</td>
             <td>0,00</td>
-            <td>0,00</td>
-            <td><input type="number" placeholder="100,00" /></td>
+            <td>100,00</td>
+            <td><input type="number" placeholder="100,00" value="100"/></td>
             <td>Brita</td>
             <td>10,0</td>
           </tr>
@@ -167,7 +179,7 @@
 
     <div id="resultados">
       <label for="vr_fretes">Total Fretes</label>
-      <input type="number" id="vr_fretes" disabled />
+      <input type="number" id="vr_fretes" disabled value="0"/>
 
       <label for="vr_abast">Total abastecimentos</label>
       <input type="number" id="vr_abast" disabled />
